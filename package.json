@@ -13,12 +13,16 @@
     "content": "env-cmd --silent cross-env CONTENT_ROOT=files yari-tool",
     "build": "env-cmd --silent cross-env CONTENT_ROOT=files BUILD_OUT_ROOT=build yari-build",
     "fix:md": "npm run lint:md -- --fix",
-    "lint:md": "markdownlint \"**/*.md\" -i node_modules"
+    "lint:md": "markdownlint \"**/*.md\" -i node_modules",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@mdn/yari": "1.27.33",
     "cross-env": "7.0.3",
     "env-cmd": "10.1.0",
-    "markdownlint-cli": "0.32.2"
-  }
+    "markdownlint-cli": "0.32.2",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
